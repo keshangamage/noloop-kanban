@@ -1,0 +1,196 @@
+.board {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 2rem 1rem;
+}
+
+.boardTools {
+  display: grid;
+  align-items: start;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+
+.search,
+.addTaskForm {
+  display: grid;
+  gap: 0.375rem;
+  max-width: 24rem;
+}
+
+.boardTools label {
+  color: #1d2a3a;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.boardTools input {
+  min-width: 0;
+  width: 100%;
+  padding: 0.5rem 0.625rem;
+  border: 1px solid #b9c9db;
+  border-radius: 0.375rem;
+  background: #fff;
+  color: #1d2a3a;
+}
+
+.addTaskControls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.addTaskControls button {
+  flex-shrink: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #294867;
+  border-radius: 0.375rem;
+  background: #294867;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addTaskControls button:hover:not(:disabled) {
+  background: #1d3854;
+}
+
+.addTaskControls button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.addTaskControls input[aria-invalid="true"] {
+  border-color: #a32a34;
+}
+
+.formFeedback {
+  color: #831f28;
+  font-size: 0.875rem;
+}
+
+.formFeedback[data-kind="success"] {
+  color: #235540;
+}
+
+.boardTools input:focus-visible,
+.addTaskControls button:focus-visible,
+.actions button:focus-visible {
+  outline: 2px solid #285c90;
+  outline-offset: 2px;
+}
+
+.columns {
+  display: grid;
+  gap: 1rem;
+  margin-block-start: 1.5rem;
+}
+
+.column {
+  min-width: 0;
+  min-height: 8rem;
+  padding: 1rem;
+  border: 1px solid #d8e0e9;
+  border-radius: 0.75rem;
+  background: #f3f6fa;
+  color: #1d2a3a;
+}
+
+.column h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+}
+
+.count {
+  min-width: 1.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 1rem;
+  background: #e3ebf4;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.tasks {
+  display: grid;
+  gap: 0.75rem;
+  margin-block-start: 1rem;
+  padding: 0;
+  list-style-type: "";
+}
+
+.task {
+  padding: 0.75rem;
+  border: 1px solid #d8e0e9;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+.task h3,
+.task p {
+  overflow-wrap: anywhere;
+}
+
+.task h3 {
+  font-size: 1rem;
+}
+
+.task p,
+.empty {
+  color: #46566b;
+  font-size: 0.875rem;
+}
+
+.task p {
+  margin-block-start: 0.25rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-block-start: 0.75rem;
+}
+
+.actions button {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #b9c9db;
+  border-radius: 0.375rem;
+  background: #fff;
+  color: #294867;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.actions button:hover:not(:disabled) {
+  background: #edf3f9;
+}
+
+.actions button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.moveError {
+  margin-block-start: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #e4b8b8;
+  border-radius: 0.375rem;
+  background: #fff2f2;
+  color: #831f28;
+}
+
+.empty {
+  margin-block-start: 1rem;
+}
+
+@media (min-width: 768px) {
+  .boardTools {
+    grid-template-columns: repeat(2, minmax(0, 24rem));
+  }
+
+  .columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
